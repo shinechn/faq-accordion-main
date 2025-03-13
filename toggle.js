@@ -4,13 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add click event listener to each header
     accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            // Get the parent accordion item
-            const accordionItem = header.closest('.accordion-item');
+      header.setAttribute('tabindex', '0')
+      header.addEventListener('click', () =>toggleAccordion(header));
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          toggleAccordion(header);
+        }
+      });
+    }); 
+        
+    function toggleAccordion(header){
+      // Get the parent accordion item
+      const accordionItem = header.closest('.accordion-item');
           
-            // Toggle the active class
-            const currentItem = accordionItem;
-            currentItem.classList.toggle('active');
-        });
-    });
+      // Toggle the active class
+      accordionItem.classList.toggle('active');
+    }
 });
