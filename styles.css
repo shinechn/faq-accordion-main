@@ -102,6 +102,9 @@ body {
 /* desk */
 @media (min-width: 800px) {
   /* CSS for wide screens */
+  .background-image {
+    content: url("./assets/images/background-pattern-desktop.svg");
+  }
 }
 
 @media (min-width: 1100px) {
