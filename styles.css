@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 :root {
-  --color-shadow: hsl(292, 16%, 49%);
+  --color-shadow: hsla(292, 16%, 49%, 0.5);
   --color-card: hsl(0, 0%, 100%);
   --color-div: hsl(275, 100%, 97%);
   --color-icon: hsl(292, 42%, 14%);
@@ -25,8 +25,6 @@ body {
   padding: 1rem;
   position: relative;
   user-select: none;
-  /* margin-top: 2rem; */
-  /* margin-bottom: 1rem; */
 }
 
 .background-image {
@@ -76,8 +74,11 @@ body {
   gap: 1rem;
   cursor: pointer;
 }
+.accordion-header:hover {
+  box-shadow: 0 0 0 4px var(--color-shadow);
+  border-radius: 8px;
+}
 .accordion-content {
-  display: none;
   padding-top: 1rem;
   padding-left: 0.5rem;
   padding-right: 2rem;
